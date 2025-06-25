@@ -1,0 +1,1 @@
+  setbuf(stdin,NULL);
