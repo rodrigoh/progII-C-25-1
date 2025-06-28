@@ -1,8 +1,13 @@
+/*
+Declarar uma variável, um ponteiro para essa variável, e usar o ponteiro para acessar e modificar o valor da variável.
+*/
 #include<stdio.h>
 #include<stdlib.h>
+#include<windows.h>
 
 int main(){
-  system("clear");
+  SetConsoleOutputCP(65001);
+  system("cls");
   int *p;
   int valor;
   p = &valor;

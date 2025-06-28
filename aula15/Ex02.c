@@ -1,8 +1,11 @@
+//Usar ponteiros para percorrer um array e somar seus elementos. Lembre-se que o nome de um array em C já é um ponteiro para o primeiro elemento.
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<windows.h>
 
 int main(){
+  SetConsoleOutputCP(65001);
   srand(time(NULL));
   int *p;
   p = malloc(10*sizeof(int));

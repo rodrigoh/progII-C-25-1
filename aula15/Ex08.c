@@ -8,6 +8,7 @@ na tela.
 */
 #include<stdio.h>
 #include<stdlib.h>
+#include<windows.h>
 
 int ordena(int *n1, int *n2, int *n3){
   int a,b,c;
@@ -30,11 +31,11 @@ int ordena(int *n1, int *n2, int *n3){
   *n2 = b;
   *n3 = c;
   return 0;
-
 }
 
 int main(){
-  system("clear");
+  SetConsoleOutputCP(65001);
+  system("cls");
   int n1, n2, n3;
   printf("Digite um número: ");
   scanf("%d",&n1);

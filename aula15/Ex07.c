@@ -1,5 +1,5 @@
 /*
-Crie uma função que receba	como parâmetros dois vetores de inteiros: x1 e x2 
+Crie uma função que recebacomo parâmetros dois vetores de inteiros: x1 e x2 
 e as suas respectivas quantidades de elementos: n1 e n2. A função deverá 
 retornar um ponteiro para um terceiro vetor, x3, alocado dinamicamente, 
 contendo a intersecção de x1 e x2 e usar o ponteiro qtd para retornar o 
@@ -11,6 +11,7 @@ Assinatura da função:
 */
 #include<stdio.h>
 #include<stdlib.h>
+#include<windows.h>
 
 int* interseccao(int *x1, int *x2, int n1, int n2, int *qtd){
   int *vi;
@@ -19,11 +20,11 @@ int* interseccao(int *x1, int *x2, int n1, int n2, int *qtd){
   for(int i=0;i<n1;i++){
     for(int j=0;j<n2;j++){
       if(x1[i]==x2[j]){
-        if(i==0){
+        if(cont==0){
           vi = malloc(sizeof(int));
         }
         else{
-          vi = realloc(vi, sizeof(int)*cont+1);
+          vi = realloc(vi, sizeof(int)*(cont+1));
         }
         vi[cont] = x1[i];
         cont++;
@@ -35,6 +36,8 @@ int* interseccao(int *x1, int *x2, int n1, int n2, int *qtd){
 }
 
 int main(){
+  SetConsoleOutputCP(65001);
+  system("cls");
   int x1[] = {1, 3, 4, 7, 9};
   int x2[] = {1, 5, 7, 9};
 

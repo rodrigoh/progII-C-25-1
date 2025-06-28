@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<windows.h>
 
 typedef struct{
   char nome[100];
@@ -19,7 +20,8 @@ Funcionario cadastraFuncionario(){
   printf("Digite o nome do funcionário: ");
   fgets(funcionario.nome, sizeof(funcionario.nome),stdin);
   //Removendo o \n do final...
-  funcionario.nome[strcspn(funcionario.nome, "\n")] = '\0';
+  int pos = strcspn(funcionario.nome, "\n");
+  funcionario.nome[pos] = '\0';
   setbuf(stdin,NULL);
   printf("Qual o salário do %s R$",funcionario.nome);
   scanf("%lf",&funcionario.salario);
@@ -32,7 +34,8 @@ void mostraFuncionario(Funcionario funcionario){
 }
 
 int main(){
-  system("clear");
+  SetConsoleOutputCP(65001);
+  system("cls");
   Empresa empresa;
   printf("Qual o nome da empresa: ");
   fgets(empresa.nome,sizeof(empresa.nome),stdin);
